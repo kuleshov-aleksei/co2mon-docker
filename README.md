@@ -16,6 +16,13 @@ Run:
 docker run -d --name co2 -p 23123:80 --device=/dev/bus/usb/001/004 debug-image
 ```
 
+Also, you can run this image using docker-compose:
+```
+docker-compose up -d
+```
+
+After that, you can access metrics exposed at `http://host_ip:23123/metrics`
+
 Notice, that you have to forward usb device into container. You can use `lsusb` to find out which device should be forwarded. For example, my device shows as `Bus 001 Device 004: ID 04d9:a052 Holtek Semiconductor, Inc. USB-zyTemp`. This means my device path is `/dev/bus/usb/001/004`.
 
 ## Compatible Devices

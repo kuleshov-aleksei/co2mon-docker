@@ -1,0 +1,10 @@
+version: '3'
+services:
+  co2monitor:
+    image: encamy/co2mon:latest
+    container_name: co2monitor
+    restart: unless-stopped
+    devices:
+      - /dev/bus/usb/001/004:/dev/bus/usb/001/004
+    ports:
+      - 23123:80

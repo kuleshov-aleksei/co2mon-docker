@@ -1,5 +1,23 @@
 # Software for CO2 Monitor
 
+## Info about fork
+
+This is a fork of [co2mon](https://github.com/dmage/co2mon) with docker support
+
+Build docker image:
+
+```
+docker build . -t co2-image --no-cache
+```
+
+Run:
+
+```
+docker run -d --name co2 -p 23123:80 --device=/dev/bus/usb/001/004 debug-image
+```
+
+Notice, that you have to forward usb device into container. You can use `lsusb` to find out which device should be forwarded. For example, my device shows as `Bus 001 Device 004: ID 04d9:a052 Holtek Semiconductor, Inc. USB-zyTemp`. This means my device path is `/dev/bus/usb/001/004`.
+
 ## Compatible Devices
 
 This software supports compact USB-powered CO2 meters that identify as:

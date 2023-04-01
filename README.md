@@ -16,7 +16,7 @@ Run:
 docker run -d --name co2 -p 23123:80 --device=/dev/bus/usb/001/004 debug-image
 ```
 
-Also, you can run this image using docker-compose:
+Also, you can run this image using docker-compose (customize device path and exposed port):
 ```
 docker-compose up -d
 ```

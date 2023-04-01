@@ -1,10 +1,14 @@
 project(libco2mon)
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.24.0)
 
-find_package(PkgConfig)
-# hidapi-libusb - Ubuntu 14.04 (trusty)
-# hidapi        - homebrew on OS X 10.10 (Yosemite)
-pkg_search_module(HIDAPI REQUIRED hidapi-libusb hidapi)
+set(HIDAPI_INCLUDE_DIRS
+    /dependencies/hidapi/include/hidapi
+)
+
+set(HIDAPI_LIBRARIES
+    /dependencies/hidapi/lib/libhidapi-libusb.so
+    /dependencies/hidapi/lib/libhidapi-hidraw.so
+)
 
 include_directories(
     include

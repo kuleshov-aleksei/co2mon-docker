@@ -1,5 +1,5 @@
 project(co2mon)
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.24.0)
 
 # Known configuration points:
 #
